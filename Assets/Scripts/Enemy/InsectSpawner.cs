@@ -36,9 +36,18 @@ public class InsectSpawner : MonoBehaviour
         float scale = Random.Range(minScale, maxScale);
         insect.transform.localScale = Vector3.one * scale;
 
+        Rigidbody rb = insect.AddComponent<Rigidbody>();
+        rb.useGravity = false;
+        rb.isKinematic = true;
+
+        Collider collider = insect.GetComponent<Collider>();
+        if (collider != null)
+            collider.isTrigger = true;
+
         var insectMovement = insect.AddComponent<InsectMovement>();
         insectMovement.moveSpeed = Random.Range(minSpeed, maxSpeed);
         insectMovement.flyHeight = spawnPosition.y;
+        insectMovement.maxFlyHeight = maxHeight;
         insect.tag = "Insect";
 
         var renderer = insect.GetComponent<Renderer>();

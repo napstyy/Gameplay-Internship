@@ -386,6 +386,32 @@ MonoBehaviour:
   sensitivity: 3
   distance: 5
   height: 2
+--- !u!1 &903795803 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 840217824896522355, guid: b7d0ab9b2ae87a945b49b15646561042, type: 3}
+  m_PrefabInstance: {fileID: 1044494446}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &903795806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 903795803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d127658eea334b48b591887286b8848, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InsectSpawner
+  insectCount: 5
+  spawnRadius: 10
+  spawnCenter: {x: 0, y: 0, z: 0}
+  minHeight: 0.5
+  maxHeight: 1.2
+  minScale: 0.18
+  maxScale: 0.32
+  minSpeed: 1
+  maxSpeed: 5
 --- !u!1001 &1044494446
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -441,7 +467,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 840217824896522355, guid: b7d0ab9b2ae87a945b49b15646561042, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 903795806}
   m_SourcePrefab: {fileID: 100100000, guid: b7d0ab9b2ae87a945b49b15646561042, type: 3}
 --- !u!1 &1111061537
 GameObject:
@@ -663,6 +692,7 @@ GameObject:
   - component: {fileID: 1714795047}
   - component: {fileID: 1714795046}
   - component: {fileID: 1714795045}
+  - component: {fileID: 1714795051}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -684,6 +714,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CharacterMovement
   moveSpeed: 6
   rotationSpeed: 10
+  jumpForce: 8
+  gravityScale: 30
+  groundDrag: 0.2
 --- !u!143 &1714795046
 CharacterController:
   m_ObjectHideFlags: 0
@@ -804,6 +837,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1714795051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714795044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d7f62dd3fb1a2441a0263569ba4e285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterManager
+  maxHealth: 100
+  currentHealth: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

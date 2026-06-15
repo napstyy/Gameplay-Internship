@@ -4,8 +4,16 @@ public class CharacterMovement : MonoBehaviour
 {
     public float moveSpeed = 6f;
     public float rotationSpeed = 10f;
+    public float jumpForce = 5f;
+    public float gravityScale = 20f;
+    public float groundDrag = 0.2f;
 
     private CharacterController _controller;
+    private float verticalVelocity;
+    private bool isGrounded;
+    private bool isJumping;
+    private int jumpsRemaining;
+    private int maxJumps = 2;
 
     private void Awake()
     {
@@ -14,6 +22,13 @@ public class CharacterMovement : MonoBehaviour
 
     private void Update()
     {
+        isGrounded = _controller.isGrounded;
+        
+        if (isGrounded)
+        {
+            jumpsRemaining = maxJumps;
+        }
+
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
 
@@ -28,6 +43,41 @@ public class CharacterMovement : MonoBehaviour
             _controller.Move(direction * moveSpeed * Time.deltaTime);
         }
 
-        _controller.Move(Vector3.down * 20f * Time.deltaTime);
+        HandleJump();
+        HandleGravity();
+
+        _controller.Move(new Vector3(0, verticalVelocity, 0) * Time.deltaTime);
+    }
+
+    private void HandleJump()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) && jumpsRemaining > 0)
+        {
+            verticalVelocity = jumpForce;
+            isJumping = true;
+            jumpsRemaining--;
+        }
+        
+        if (isGrounded && isJumping && verticalVelocity <= 0)
+        {
+            isJumping = false;
+        }
+    }
+    
+    public bool IsJumping()
+    {
+        return isJumping && verticalVelocity > 0;
+    }
+
+    private void HandleGravity()
+    {
+        if (isGrounded && verticalVelocity < 0)
+        {
+            verticalVelocity = 0f;
+        }
+        else
+        {
+            verticalVelocity -= gravityScale * Time.deltaTime;
+        }
     }
 }
