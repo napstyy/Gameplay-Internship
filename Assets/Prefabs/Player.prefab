@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 1270014415958670191}
   - component: {fileID: 2910270340187620830}
   - component: {fileID: 7869906413435917541}
+  - component: {fileID: 822138365449574574}
+  - component: {fileID: 6537728945372246411}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -70,7 +72,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: f281f2fee9ee9f14e8c6b155f07d7999, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -173,3 +175,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CharacterManager
   maxHealth: 100
   currentHealth: 0
+--- !u!114 &822138365449574574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7024880124891894908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48ef6f552c1318f4983a48e3e065883e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CoinCollection
+  coinText: {fileID: 0}
+--- !u!114 &6537728945372246411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7024880124891894908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad3daafcdbe0f70448b13d71207b9512, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CheckpointSystem
+  lastCheckpoint: {x: 0, y: 0, z: 0}
