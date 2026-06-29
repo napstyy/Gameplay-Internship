@@ -232,6 +232,62 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &268507802
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 268507804}
+  - component: {fileID: 268507803}
+  m_Layer: 0
+  m_Name: AntSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &268507803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 268507802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4473e8b702a1ef479583c3e2553e5be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AntSpawner
+  antCount: 2
+  spawnRadius: 6
+  spawnCenter: {x: 0, y: 0, z: 0}
+  minScale: 0.2
+  maxScale: 0.5
+  minSpeed: 1.5
+  maxSpeed: 3
+  patrolRadius: 1.5
+  detectionRadius: 5
+  groupRadius: 3
+  groupThreshold: 2
+  fleeDistance: 6
+--- !u!4 &268507804
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 268507802}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 12.97587, y: 4.89, z: 17}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &626826366
 GameObject:
   m_ObjectHideFlags: 0
@@ -683,6 +739,60 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6620024917176159814, guid: 9cbd21b9d81f6c743bc58c2dd51daeae, type: 3}
   m_PrefabInstance: {fileID: 6886774289911488986}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1850004866
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1850004868}
+  - component: {fileID: 1850004867}
+  m_Layer: 0
+  m_Name: SpiderSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1850004867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1850004866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a83e7afc24e08f3498428584e5d6fee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpiderSpawner
+  spiderCount: 1
+  spawnRadius: 6
+  spawnCenter: {x: 0, y: 0, z: 0}
+  minScale: 0.5
+  maxScale: 1.2
+  minSpeed: 1.5
+  maxSpeed: 3.5
+  patrolRadius: 3
+  detectionRadius: 6
+  maxChaseDistanceFromHome: 8
+--- !u!4 &1850004868
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1850004866}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 16.03, y: 3.75, z: 15.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &6886774289911488986
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -748,5 +858,7 @@ SceneRoots:
   - {fileID: 212455769}
   - {fileID: 6886774289911488986}
   - {fileID: 626826367}
+  - {fileID: 1850004868}
   - {fileID: 1111061540}
   - {fileID: 1044494446}
+  - {fileID: 268507804}
